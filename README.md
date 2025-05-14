@@ -1,0 +1,1 @@
+Alışverişte Alınacaklar Listesi Uygulaması
