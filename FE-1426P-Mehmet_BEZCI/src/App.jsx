@@ -6,7 +6,6 @@ import Confetti from "react-confetti";
 import Fuse from "fuse.js";
 import "./App.css";
 
-// Silme butonu componenti
 function IconButton({ onClick }) {
   return (
     <button
@@ -27,7 +26,6 @@ function IconButton({ onClick }) {
   );
 }
 
-// Statik veriler
 const shops = [
   { id: 1, name: "Migros" },
   { id: 2, name: "Teknosa" },
@@ -57,13 +55,11 @@ export default function App() {
 
   const [confetti, setConfetti] = useState(false);
 
-  // Fuse.js fuzzy search için ayar
   const fuse = new Fuse(products, {
     keys: ["name"],
     threshold: 0.3,
   });
 
-  // Filtrelenmiş ürünler
   const filteredProducts = products
     .filter((p) => {
       if (filteredShopId === "all") return true;
@@ -113,7 +109,7 @@ export default function App() {
       if (wasNotComplete && isNowComplete) {
         alert("Alışveriş Tamamlandı !");
         setConfetti(true);
-        setProducts([]); // Listeyi temizle
+        setProducts([]);
       }
 
       return updated;
@@ -127,18 +123,16 @@ export default function App() {
       const isNowComplete =
         updated.length > 0 && updated.every((p) => p.isBought);
 
-      // Geriye kalan tüm ürünler satın alınmışsa, alert ve konfeti çalıştır
       if (isNowComplete) {
         alert("Alışveriş Tamamlandı !");
         setConfetti(true);
-        setProducts([]); // Listeyi temizle
+        setProducts([]);
       }
 
       return updated;
     });
   };
 
-  // Konfeti 5 saniye sonra kapat
   useEffect(() => {
     if (confetti) {
       const timer = setTimeout(() => setConfetti(false), 5000);
@@ -153,8 +147,6 @@ export default function App() {
       )}
 
       <h1>🛒 Ürün Ekle</h1>
-
-      {/* Ürün ekleme formu */}
       <div className="mb-3">
         <label className="form-label">Market</label>
         <select
@@ -201,7 +193,6 @@ export default function App() {
         Ürün Ekle
       </button>
 
-      {/* Filtre Kutusu */}
       <h4>🔍 Filtrele</h4>
       <div className="row mb-4">
         <div className="col-md-3">
@@ -283,8 +274,7 @@ export default function App() {
           />
         </div>
       </div>
-
-      {/* Ürün Tablosu */}
+      
       <Table striped bordered hover>
         <thead>
           <tr>

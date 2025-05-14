@@ -5,10 +5,10 @@ function IconButton({ onClick }) {
     <button
       className="btn btn-danger"
       style={{
-        width: '40px', // Kare şeklinde buton
+        width: '40px',
         height: '40px',
         padding: 0,
-        borderRadius: '5px', // Yumuşak kenarlar
+        borderRadius: '5px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
