@@ -1,0 +1,102 @@
+/* App.css */
+
+body {
+  background: linear-gradient(to right, #f3f4f6, #e5e7eb);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem 2.5rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+  text-align: center;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 2rem;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.form-control,
+.form-select {
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  border: 1px solid #d1d5db;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+button {
+  background-color: #6366f1 !important;
+  border: none !important;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px !important;
+  font-weight: 500;
+  color: white;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #4f46e5 !important;
+}
+
+.table {
+  margin-top: 1.5rem;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fafafa;
+}
+
+.table th {
+  background-color: #6366f1;
+  color: white;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #eef2ff;
+  cursor: pointer;
+}
+
+tr.bought {
+  text-decoration: line-through;
+  color: #9ca3af;
+  background-color: #f3f4f6;
+}
+
+td:last-child {
+  text-align: center;
+}
+
+.icon-button {
+  background-color: #ef4444;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.icon-button:hover {
+  background-color: #dc2626;
+}
