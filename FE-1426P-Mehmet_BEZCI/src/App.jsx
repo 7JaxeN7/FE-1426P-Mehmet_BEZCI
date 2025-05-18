@@ -109,7 +109,6 @@ export default function App() {
       if (wasNotComplete && isNowComplete) {
         alert("Alışveriş Tamamlandı !");
         setConfetti(true);
-        setProducts([]);
       }
 
       return updated;
@@ -126,7 +125,6 @@ export default function App() {
       if (isNowComplete) {
         alert("Alışveriş Tamamlandı !");
         setConfetti(true);
-        setProducts([]);
       }
 
       return updated;
@@ -274,10 +272,11 @@ export default function App() {
           />
         </div>
       </div>
-      
+
       <Table striped bordered hover>
         <thead>
           <tr>
+            <th>ID</th>
             <th>Ürün Adı</th>
             <th>Market</th>
             <th>Kategori</th>
@@ -288,14 +287,20 @@ export default function App() {
         <tbody>
           {filteredProducts.map((product) => (
             <tr key={product.id}>
+              <td>{product.id}</td>
               <td>{product.name}</td>
               <td>{shops.find((shop) => shop.id === product.shopId)?.name}</td>
               <td>
-                {categories.find((cat) => cat.id === product.categoryId)?.name}
+                {
+                  categories.find((cat) => cat.id === product.categoryId)
+                    ?.name
+                }
               </td>
               <td>
                 <button
-                  className={`btn btn-${product.isBought ? "success" : "warning"}`}
+                  className={`btn btn-${
+                    product.isBought ? "success" : "warning"
+                  }`}
                   onClick={() => toggleBought(product.id)}
                 >
                   {product.isBought ? "Satın Alındı" : "Satın Al"}
